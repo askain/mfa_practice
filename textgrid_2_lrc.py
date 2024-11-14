@@ -2,11 +2,24 @@ from textgrid import TextGrid
 import datetime
 from pathlib import Path
 
-# TextGrid 파일 경로와 LRC 파일 경로 지정
-textgrid_dir = r"/data/sample/en/output"
+import click
+
+@click.command()
+@click.option('--dir', help='The folder contains TextGrid files')
+def commandline(dir):
+    cnt = 0
+    for type in [r'*.TextGrid']:
+        for f in Path(dir).rglob(type):
+            convert((str(f)))
+            cnt += 1
+    
+    if cnt == 0:
+        print('No file to convert. please check the file exists.')
+    else:
+        print(f'converted {cnt} file(s)')
 
 
-def execute(arg):
+def convert(arg):
     textgrid_path = arg
     lrc_path = textgrid_path.replace('.TextGrid', '.lrc', 1)
     # TextGrid 파일 읽기
@@ -31,6 +44,4 @@ def execute(arg):
     print(f"{textgrid_path} -> {lrc_path}에 저장되었습니다.")
 
 if __name__ == '__main__':
-    for type in [r'*.TextGrid']:
-        for f in Path(textgrid_dir).rglob(type):
-            execute((str(f)))
+    commandline()
