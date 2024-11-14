@@ -45,14 +45,13 @@ mfa model download dictionary korean_mfa
 > ```
 
 
-일본어 & 영어
-
-```sh
+> 일본어 & 영어
+> ```sh
 > mfa model download acoustic english_mfa
 > mfa model download dictionary english_mfa
 > mfa model download acoustic japanese_mfa
 > mfa model download dictionary japanese_mfa
-```
+> ```
 
 <br>
 
@@ -61,6 +60,12 @@ align 시작
 ```sh
 mfa align /data/sample/ko korean_mfa korean_mfa /data/sample/ko/output
 ```
+
+> 영어 & 일본어
+> ```sh
+> mfa align /data/sample/en english_mfa english_mfa /data/sample/en/output
+> mfa align /data/sample/ja japanese_mfa japanese_mfa /data/sample/ja/output
+> ```
 
 <br>
 
