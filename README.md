@@ -53,12 +53,12 @@ mfa model download dictionary korean_mfa
 > mfa model download dictionary japanese_mfa
 > ```
 
-중국어 간체
-```sh
+> 중국어 간체
+> ```sh
 > mfa model download acoustic mandarin_mfa
 > mfa model download dictionary mandarin_china_mfa
 > pip install spacy-pkuseg dragonmapper hanziconv
-```
+> ```
 
 
 <br>
@@ -75,10 +75,10 @@ mfa align /data/sample/ko korean_mfa korean_mfa /data/sample/ko/output
 > mfa align /data/sample/ja japanese_mfa japanese_mfa /data/sample/ja/output
 > ```
 
-중국어 간체
-```sh
-mfa align /data/sample/zh-cn mandarin_china_mfa mandarin_mfa /data/sample/zh-cn/output
-```
+> 중국어 간체
+> ```sh
+> mfa align /data/sample/zh-cn mandarin_china_mfa mandarin_mfa /data/sample/zh-cn/output
+> ```
 
 <br>
 
